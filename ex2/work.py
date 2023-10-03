@@ -1,8 +1,14 @@
 from math import ceil
 
 def calc_account(m):
-    # 実装は入れていません、自分で入れてください
-    pass
+    if m <= 0:
+        return None
+    elif m <= 1700:
+        return 610
+    else:
+        additional_distance = m - 1700
+        additional_fare = ceil(additional_distance / 315) * 80
+        return 610 + additional_fare
 
 if __name__ == "__main__":
     from argparse import ArgumentParser
